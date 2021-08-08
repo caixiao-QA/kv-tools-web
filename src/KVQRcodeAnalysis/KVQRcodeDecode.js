@@ -24,7 +24,8 @@ class KVQRcodeDecode extends React.Component{
 
     render(){
         const decodeStyle = {
-                margin:20
+                margin:20,
+                fontSize:15
         }
         return(
             <div style={decodeStyle}>

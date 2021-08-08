@@ -54,8 +54,8 @@ class KVQRcodeAnalysis extends React.Component{
             </div>
             <div className="decoder">
             {this.state.decodeDataStatus=='initial' && <div className="decoder-initial">解析数据展示区域</div>}
-            {this.state.decodeDataStatus=='updating' && <PropagateLoader  css={override} speedMultiplier={0.7} size={20} />}       
-            {this.state.decodeDataStatus=='done' && <KVQRcodeDecode className="decoder-done" QRdata={this.state.QRData}/>}
+            {this.state.decodeDataStatus=='updating' && <PropagateLoader  css={override} color={"#272639"} speedMultiplier={0.7} size={20} />}       
+            {this.state.decodeDataStatus=='done' && <KVQRcodeDecode QRdata={this.state.QRData}/>}
             </div>
         </div>
 

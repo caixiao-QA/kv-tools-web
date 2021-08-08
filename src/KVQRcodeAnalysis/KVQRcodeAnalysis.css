@@ -6,7 +6,6 @@
 
 }
 
-
 .scanner-area{
     width: 450px;
     height: 450px;
@@ -16,8 +15,8 @@
 }
 
 .scan-button {
-    margin-top: 10%;
-    background-color:black;
+    margin-top: 12%;
+    background-color:#272639;
     color: white;
     font-size: 20px;
     padding: 10px 60px;
@@ -40,24 +39,24 @@
     margin: 5% 10%;
     top: 0;
     left: 50%;
-    border:3px solid gainsboro;
+    border:3px solid darkgray;
 
 }
 
 .decoder-initial {
-    margin-top: 50%;
-    color:gray;
-    font-size: 20px;
+    margin-top: 55%;
+    color: #272639;
+    font-size: 23px;
     text-align: center;
 }
 
-.decoder-updating {
+/* .decoder-updating {
     margin-top: 50%;
     color:gray;
     size: 20px;
-}
+} */
 
-.decoder-done {
+/* .decoder-done {
     font-size: 20px;
     text-align: left;
-}
+} */
