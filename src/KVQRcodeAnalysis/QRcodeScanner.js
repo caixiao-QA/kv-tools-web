@@ -1,67 +1,51 @@
 import React from 'react';
 import QrReader from 'react-qr-scanner';
-import { URDecoder } from '@ngraveio/bc-ur'
-// import { DecodeProtobuf } from './decodeProtobuf'
-import {DecodeProtobuf} from './decodeProtobuf'
+import { URDecoder } from '@ngraveio/bc-ur';
 
-class ScanQRcode extends React.Component {
+class QRcodeScanner extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       delay: 200,
-      decoder: new URDecoder()
-
+      decoder: new URDecoder(),
+      previewStyle : {
+        height: 450,
+        width: 450,
+        objectFit:"cover"
+      }
     }
-
-    this.handleScan = this.handleScan.bind(this)
   }
 
-  handleScan(data){
+  handleScan=(data)=>{
     if(data){
       this.state.decoder.receivePart(data)
-
       if (this.state.decoder.isSuccess()) {
         // Get the UR representation of the message
         const ur = this.state.decoder.resultUR()
-
         // Decode the CBOR message to a Buffer
         const decoded = ur.decodeCBOR()
         console.log(decoded)
-
-        DecodeProtobuf()
-        
-        // get the original message, assuming it was a JSON object
-        // const originalMessage = JSON.parse(decoded.toString())
+        this.props.QRData(decoded)
       }
-      }
-   
+    }
   }
 
   handleError(err){
     console.error(err)
   }
-  render(){
-    console.log(this.state.result)
-    const previewStyle = {
-      height: 300,
-      width: 300,
-      objectFit:"cover"
-    }
-    
-    const decoder = new URDecoder()
 
-    
+  render(){
     return(
       <div>
         <QrReader
           delay={this.state.delay}
           onError={this.handleError}
           onScan={this.handleScan}
-          style={previewStyle}
+          style={this.state.previewStyle}
           />
       </div>
     )
   }
 }
 
-export default ScanQRcode;
+export default QRcodeScanner;
