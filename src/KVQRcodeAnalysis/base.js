@@ -73,19 +73,19 @@ $root.protoc = (function() {
 
         /**
          * Base hotVersion.
-         * @member {number} hotVersion
+         * @member {number|null|undefined} hotVersion
          * @memberof protoc.Base
          * @instance
          */
-        Base.prototype.hotVersion = 0;
+        Base.prototype.hotVersion = null;
 
         /**
          * Base coldVersion.
-         * @member {number} coldVersion
+         * @member {number|null|undefined} coldVersion
          * @memberof protoc.Base
          * @instance
          */
-        Base.prototype.coldVersion = 0;
+        Base.prototype.coldVersion = null;
 
         /**
          * Base deviceType.
@@ -353,7 +353,7 @@ $root.protoc = (function() {
          * @memberof protoc
          * @interface IPayload
          * @property {protoc.Payload.Type|null} [type] Payload type
-         * @property {string|null} [xfp] Payload xfp
+         * @property {string|null} [uuid] Payload uuid
          * @property {protoc.ISync|null} [sync] Payload sync
          * @property {protoc.ISignTransaction|null} [signTx] Payload signTx
          * @property {protoc.ISignMessage|null} [signMsg] Payload signMsg
@@ -385,12 +385,12 @@ $root.protoc = (function() {
         Payload.prototype.type = 0;
 
         /**
-         * Payload xfp.
-         * @member {string} xfp
+         * Payload uuid.
+         * @member {string} uuid
          * @memberof protoc.Payload
          * @instance
          */
-        Payload.prototype.xfp = "";
+        Payload.prototype.uuid = "";
 
         /**
          * Payload sync.
@@ -472,8 +472,8 @@ $root.protoc = (function() {
                 writer = $Writer.create();
             if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-            if (message.xfp != null && Object.hasOwnProperty.call(message, "xfp"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.xfp);
+            if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.uuid);
             if (message.sync != null && Object.hasOwnProperty.call(message, "sync"))
                 $root.protoc.Sync.encode(message.sync, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
             if (message.signTx != null && Object.hasOwnProperty.call(message, "signTx"))
@@ -522,7 +522,7 @@ $root.protoc = (function() {
                     message.type = reader.int32();
                     break;
                 case 2:
-                    message.xfp = reader.string();
+                    message.uuid = reader.string();
                     break;
                 case 3:
                     message.sync = $root.protoc.Sync.decode(reader, reader.uint32());
@@ -591,9 +591,9 @@ $root.protoc = (function() {
                 case 9:
                     break;
                 }
-            if (message.xfp != null && message.hasOwnProperty("xfp"))
-                if (!$util.isString(message.xfp))
-                    return "xfp: string expected";
+            if (message.uuid != null && message.hasOwnProperty("uuid"))
+                if (!$util.isString(message.uuid))
+                    return "uuid: string expected";
             if (message.sync != null && message.hasOwnProperty("sync")) {
                 properties.Content = 1;
                 {
@@ -699,8 +699,8 @@ $root.protoc = (function() {
                 message.type = 9;
                 break;
             }
-            if (object.xfp != null)
-                message.xfp = String(object.xfp);
+            if (object.uuid != null)
+                message.uuid = String(object.uuid);
             if (object.sync != null) {
                 if (typeof object.sync !== "object")
                     throw TypeError(".protoc.Payload.sync: object expected");
@@ -744,12 +744,12 @@ $root.protoc = (function() {
             var object = {};
             if (options.defaults) {
                 object.type = options.enums === String ? "TYPE_RESERVE" : 0;
-                object.xfp = "";
+                object.uuid = "";
             }
             if (message.type != null && message.hasOwnProperty("type"))
                 object.type = options.enums === String ? $root.protoc.Payload.Type[message.type] : message.type;
-            if (message.xfp != null && message.hasOwnProperty("xfp"))
-                object.xfp = message.xfp;
+            if (message.uuid != null && message.hasOwnProperty("uuid"))
+                object.uuid = message.uuid;
             if (message.sync != null && message.hasOwnProperty("sync")) {
                 object.sync = $root.protoc.Sync.toObject(message.sync, options);
                 if (options.oneofs)
