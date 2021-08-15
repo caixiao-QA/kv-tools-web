@@ -1,8 +1,6 @@
 import React from 'react';
 import MenuBar from './MenuBar/MenuBar';
-import KVQRcodeAnalysis from './KVQRcodeAnalysis/KVQRcodeAnalysis';
 import QRcodeAnalysis from './QRcodeAnalysis/QRcodeAnalysis';
-import { Divider } from 'material-ui';
 
 
 class QRcodeParse extends React.Component{
