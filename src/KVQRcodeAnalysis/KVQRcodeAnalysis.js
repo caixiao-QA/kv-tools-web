@@ -38,17 +38,17 @@ class KVQRcodeAnalysis extends React.Component{
     }
 
     render(){
-        console.log(this.state.decodeDataStatus)
+        // console.log(this.state.decodeDataStatus)
         const override = css`
                             display: block;
                             margin: 50%;
                             `;
         return(
-        <div>
+        <div className="kv-parse">
             <div className="scanner">
                 <div className="scanner-area">
                     {(!(this.state.scanQRStatus)) && <img src={cameraImg} className="scan-img" onClick={this.setScanQRStatus}/>}
-                    {((this.state.scanQRStatus)) && <QRcodeScanner scanQRStatus={this.state.scanQRStatus} QRData={this.getQRcodeScannerData.bind(this)}/>}
+                    {((this.state.scanQRStatus)) && <QRcodeScanner  QRData={this.getQRcodeScannerData.bind(this)}/>}
                 </div>
                 <button onClick={this.setScanQRStatus} className="scan-button">{!this.state.scanQRStatus? "开始扫码":"停止扫码"}</button>
             </div>

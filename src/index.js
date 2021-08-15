@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MenuBar from './MenuBar'
-import './index.css';
-import KVQRcodeAnalysis from './KVQRcodeAnalysis/KVQRcodeAnalysis'
+import QRcodeParse from './QRcodeParser'
 
 
 ReactDOM.render(
-    <KVQRcodeAnalysis/>,
+    <QRcodeParse/>,
   document.getElementById('root')
 );

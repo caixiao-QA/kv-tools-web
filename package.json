@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@ngraveio/bc-ur": "^1.1.6",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -35,6 +36,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "json": "^11.0.0",
+    "material-ui": "^0.20.2",
     "object-assign": "4.1.1",
     "pbjs": "^0.0.14",
     "postcss-flexbugs-fixes": "3.2.0",

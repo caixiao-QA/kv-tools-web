@@ -1,17 +1,21 @@
-.scanner {
-    width: 450px;
-    height: 600px;
-    margin: 10% 15%;
-    text-align: center;
+.kv-parse{
+    margin-left: 15%;
+    float: left;
+}
 
+.scanner {
+    width: 400px;
+    height: 600px;
+    margin: 30% 15%;
+    text-align: center;
 }
 
 .scanner-area{
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
+    margin-top: 5%;
     background-color:darkgray;
     border:3px solid gainsboro;
-
 }
 
 .scan-button {
@@ -34,8 +38,8 @@
 .decoder {
     overflow: auto;
     position: absolute;
-    width: 600px;
-    height: 750px;
+    width: 510px;
+    height: 550px;
     margin: 5%;
     top: 0;
     left: 50%;
