@@ -29,7 +29,7 @@ class KVQRcodeDecode extends React.Component{
         }
         return(
             <div style={decodeStyle}>
-            <JSONPretty data={this.decodeProtobuffToJson(this.props.QRdata)}></JSONPretty>
+            <JSONPretty data={this.decodeProtobuffToJson(this.props.KVQRdata)}></JSONPretty>
             </div>
         )
     }

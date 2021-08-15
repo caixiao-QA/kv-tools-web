@@ -1,0 +1,65 @@
+.parse{
+    margin-left: 15%;
+    float: left;
+}
+
+.scanner {
+    width: 400px;
+    height: 600px;
+    margin: 30% 15%;
+    text-align: center;
+}
+
+.scanner-area{
+    width: 400px;
+    height: 400px;
+    margin-top: 5%;
+    background-color:darkgray;
+    border:3px solid gainsboro;
+}
+
+.scan-button {
+    margin-top: 12%;
+    background-color:#272639;
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scan-img {
+    width: 65px;
+    height: 50px;
+    background-repeat: no-repeat;
+    margin-top: 45%;
+}
+
+.decoder {
+    overflow: auto;
+    position: absolute;
+    width: 510px;
+    height: 550px;
+    margin: 5%;
+    top: 0;
+    left: 50%;
+    border:3px solid darkgray;
+}
+
+.decoder-initial {
+    margin-top: 55%;
+    color: #272639;
+    font-size: 23px;
+    text-align: center;
+}
+
+/* .decoder-updating {
+    margin-top: 50%;
+    color:gray;
+    size: 20px;
+} */
+
+/* .decoder-done {
+    font-size: 20px;
+    text-align: left;
+} */

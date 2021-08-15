@@ -25,17 +25,17 @@ class MenuBar extends React.Component{
               </li>
               <li>
                 <a className={this.props.status=="KV"?"active":null} onClick={this.changeModule.bind(this,"KV")}>
-                Keystone App Module
+                Keystone App Model
                 </a>
               </li>
               <li>
                 <a className={this.props.status=="BTC"?"active":null} onClick={this.changeModule.bind(this,"BTC")}>
-                BTC Module
+                BTC Model
                 </a>
               </li>
               <li>
                 <a className={this.props.status=="ETH"?"active":null} onClick={this.changeModule.bind(this,"ETH")}>
-                ETH Module
+                ETH Model
                 </a>
                 
               </li>
